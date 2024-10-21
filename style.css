@@ -1,0 +1,280 @@
+@keyframes zoomOut {
+    from {
+        transform: scale(2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+h1, h2, h3, p {
+    font-family: monospace;
+    color: rgb(206, 197, 197);
+}
+
+.box1 {
+    height: 60vh;
+    width: 30px;
+    background: white;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.box1 h1 {
+    transform: rotate(90deg);
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+    color: black;
+}
+
+.btn {
+    background-color: rgb(206, 197, 197);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+@keyframes grain {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(-5%, -5%);
+    }
+    20% {
+        transform: translate(-10%, 5%);
+    }
+    30% {
+        transform: translate(5%, -10%);
+    }
+    40% {
+        transform: translate(-5%, 10%);
+    }
+    50% {
+        transform: translate(-10%, -10%);
+    }
+    60% {
+        transform: translate(10%, 10%);
+    }
+    70% {
+        transform: translate(10%, -10%);
+    }
+    80% {
+        transform: translate(-10%, 10%);
+    }
+    90% {
+        transform: translate(10%, 5%);
+    }
+}
+
+body {
+    margin: 20px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    overflow-x: hidden;
+    border-radius: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-section {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: linear-gradient(45deg, rgba(11, 11, 139, 0.394), rgba(128, 0, 128, 0.499), rgba(171, 18, 171, 0.376));
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(11, 11, 139, 0.394), rgba(128, 0, 128, 0.499), rgba(171, 18, 171, 0.376));
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    opacity: 0.4;
+    pointer-events: none;
+    animation: grain 8s steps(2) infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    top: -50px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin: -10px 0;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #000000;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.codesection {
+    height: 30vh;
+    z-index: 22;
+}
+
+#image {
+    position: relative;
+    margin-top: 180px;
+}
+
+#image-track {
+    display: flex;
+    gap: 5vmin;
+    position: relative;
+    left: 10%;
+    top: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+    user-select: none;
+}
+
+.yeet {
+    width: 300px;
+}
+
+.image {
+    display: flex;
+}
+
+.codesection {
+    height: 30vh;
+    z-index: 22;
+}
+
+.codesection .div {
+    width: 90vw;
+    height: 50px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.codesection .div.js:hover {
+    background-color: rgb(255, 255, 52);
+}
+
+.codesection .div.js:hover h3 {
+    color: black;
+}
+
+.codesection .div.python:hover {
+    background-color: blue;
+}
+
+.codesection .div.python:hover h3 {
+    color: rgb(255, 185, 7);
+}
+
+.codesection .div.c:hover {
+    background-color: rgb(157, 103, 2);
+}
+
+.codesection .div.html-css:hover {
+    background-color: red;
+}
+
+.codesection .div.html-css:hover h3 {
+    color: white;
+}
+
+.codesection .div.react:hover {
+    background-color: darkblue;
+}
+
+.codesection .div.react:hover h3 {
+    color: white;
+}
+
+#image-track > .image {
+    width: 30vmin;
+    height: 50vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    transition: transform 0.5s ease;
+    border-radius: 5px;
+}
+
+#image-track > .image.zoomed {
+    max-width: 70vw;
+    height: 56vmin;
+    width: auto;
+    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+    pointer-events: none;
+}
+
+#image-track > .image.zoomed-out {
+    animation: zoomOut 0.5s forwards;
+}
+
+@media (max-width: 768px) {
+    #image-track {
+        display: flex;
+        width: 700px;
+        overflow-x: hidden;
+    }
+
+    #image-track > .image {
+        width: auto;
+        height: 66vh;
+        overflow-x: hidden;
+    }
+}
