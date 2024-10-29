@@ -564,6 +564,9 @@ h1,h2,h3,h4{
         position: relative;
         right: 10px;
     }
+    .preview-image{
+        display:none;
+    }
 
 
     
